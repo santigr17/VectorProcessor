@@ -3,6 +3,7 @@ module desplazamiento_lineal (select, ent1, ent2, result);
 	input logic[7:0] ent1;
 	input logic[3:0] ent2;
 	output logic[7:0] result;
+	
 
 	always @* begin
 		

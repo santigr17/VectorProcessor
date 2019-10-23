@@ -4,30 +4,22 @@ module desplazamiento_circular(select, ent1, ent2, result);
 		input logic [2:0] ent2;
 		output logic [7:0] result;
 		
-logic [7:0] temp, shift_dato, rotate; 
-
-logic [3:0] shift_number;
+//logic [7:0] temp, shift_dato, rotate; 
 
 
 		
 		always @* begin
 		
-		shift_number = 4'b1000 - ent2;
+		
 			
 			if (select) 
 			begin
-				temp = ent1;
-				shift_dato = ent1 >> ent2;
-				rotate = temp << shift_number;
-				result = shift_dato || rotate;
+				result <= (ent1 >> ent2)|(ent1 << 4'b1000 - ent2);
 			end
 				
 			else
 			begin
-				temp = ent1;
-				shift_dato = ent1 << ent2;
-				rotate = temp >> shift_number;
-				result = shift_dato || rotate;
+				result <= (ent1 << ent2)|(ent1 >> 4'b1000 - ent2);
 			end
 			
 			

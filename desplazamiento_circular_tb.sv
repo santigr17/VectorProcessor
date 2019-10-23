@@ -12,11 +12,11 @@ initial begin
 select = 1'b0; 
 ent1 = 8'b00000001;
 ent2 = 3'b010;
-#10
+#10;
 select = 1'b1; 
 ent1 = 8'b00000010;
 ent2 = 3'b001;
-#10
+#10;
 end
 
 endmodule

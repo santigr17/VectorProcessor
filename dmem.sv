@@ -9,7 +9,7 @@ module	dmem
 	logic	[63:0]	RAM[24576:0] = '{default:63'b0};
 	
 	initial begin 
-		$readmemb("D:/santi/Proyectos/Arqui2/Proyecto2/data.txt",RAM);
+		$readmemb("C:/Users/danny/Documents/Arqui/Proyecto/data.txt",RAM);
 	end
 	//
 	always_ff@(posedge	clk) 

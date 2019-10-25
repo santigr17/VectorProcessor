@@ -1,12 +1,19 @@
 module imem(
-		input		logic	[13:0]	pc,
-		output	logic	[12:0]	instruction
+		input		logic	[15:0]	pc,
+		input		logic [1:0] select,
+		output	logic	[22:0]	instruction
 		);
 				
-	logic	[12:0] RAM[16383:0] = '{default:13'b0};
+	logic	[22:0] RAM[65536:0] = '{default:23'b0};
 	
-	initial begin
-		$readmemb("D:/santi/Proyectos/Arqui2/Proyecto2/instructions.txt",RAM);		
+	always @* begin
+		case (select)
+			2'b00 : $readmemb("C:/Users/danny/Documents/Arqui/Proyecto/data.txt",RAM);
+			2'b01 : $readmemb("C:/Users/danny/Documents/Arqui/Proyecto/data.txt",RAM);
+			2'b10 : $readmemb("C:/Users/danny/Documents/Arqui/Proyecto/data.txt",RAM);
+			2'b11 : $readmemb("C:/Users/danny/Documents/Arqui/Proyecto/data.txt",RAM);
+		endcase
+		
 	end
 		
 	assign instruction = RAM[pc];

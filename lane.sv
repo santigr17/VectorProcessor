@@ -1,7 +1,7 @@
 module lane(data1, data2, key, select, data_out);
-		logic input [7:0] data1, data2, key;
-		logic input [3:0] select;
-		logic output [7:0] data_out;
+		input logic [7:0] data1, data2, key;
+		input logic [3:0] select;
+		output logic [7:0] data_out;
 		
 		logic [7:0] sum_out;
 		logic [7:0] xor_out;
